@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=debouncer.c
+SOURCEFILES_QUOTED_IF_SPACED=debouncer.c Adafruit_DotStar.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/debouncer.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/debouncer.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/debouncer.o ${OBJECTDIR}/Adafruit_DotStar.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/debouncer.o.d ${OBJECTDIR}/Adafruit_DotStar.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/debouncer.o
+OBJECTFILES=${OBJECTDIR}/debouncer.o ${OBJECTDIR}/Adafruit_DotStar.o
 
 # Source Files
-SOURCEFILES=debouncer.c
+SOURCEFILES=debouncer.c Adafruit_DotStar.c
 
 
 
@@ -107,18 +107,30 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/debouncer.o: debouncer.c  .generated_files/flags/default/7741003a8971359935a48aa266aa723fbbb2ddf9 .generated_files/flags/default/fa77e48c5d6b209b0dbc904325b3870195f7a677
+${OBJECTDIR}/debouncer.o: debouncer.c  .generated_files/flags/default/40044d3ad9489d62c241d8b9eb816c61e3039cdd .generated_files/flags/default/fa77e48c5d6b209b0dbc904325b3870195f7a677
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/debouncer.o.d 
 	@${RM} ${OBJECTDIR}/debouncer.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/debouncer.o.d" -o ${OBJECTDIR}/debouncer.o debouncer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)    
 	
+${OBJECTDIR}/Adafruit_DotStar.o: Adafruit_DotStar.c  .generated_files/flags/default/e106f2eac77f92295d9fe99800439878407084bb .generated_files/flags/default/fa77e48c5d6b209b0dbc904325b3870195f7a677
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Adafruit_DotStar.o.d 
+	@${RM} ${OBJECTDIR}/Adafruit_DotStar.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG   -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Adafruit_DotStar.o.d" -o ${OBJECTDIR}/Adafruit_DotStar.o Adafruit_DotStar.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)    
+	
 else
-${OBJECTDIR}/debouncer.o: debouncer.c  .generated_files/flags/default/a3911a110bc315be4e25938cbae0e46d9451a19e .generated_files/flags/default/fa77e48c5d6b209b0dbc904325b3870195f7a677
+${OBJECTDIR}/debouncer.o: debouncer.c  .generated_files/flags/default/235586f203b8dd308186e891dfba76cdff552ba7 .generated_files/flags/default/fa77e48c5d6b209b0dbc904325b3870195f7a677
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/debouncer.o.d 
 	@${RM} ${OBJECTDIR}/debouncer.o 
 	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/debouncer.o.d" -o ${OBJECTDIR}/debouncer.o debouncer.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)    
+	
+${OBJECTDIR}/Adafruit_DotStar.o: Adafruit_DotStar.c  .generated_files/flags/default/fee8e7538a59cf91db29cbda3b4e1bb00b8f5bf2 .generated_files/flags/default/fa77e48c5d6b209b0dbc904325b3870195f7a677
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Adafruit_DotStar.o.d 
+	@${RM} ${OBJECTDIR}/Adafruit_DotStar.o 
+	${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/Adafruit_DotStar.o.d" -o ${OBJECTDIR}/Adafruit_DotStar.o Adafruit_DotStar.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)    
 	
 endif
 
